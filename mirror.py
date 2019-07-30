@@ -101,7 +101,6 @@ class Weather(Frame):
         self.label_no_weather_data = Label(self, font="dreams 10", bg="BLACK", fg="WHITE")
         self.label_no_weather_data.pack(side=TOP, anchor="w")
         
-        
         self.update_weather()
         
     def update_weather(self):
@@ -115,7 +114,6 @@ class Weather(Frame):
             precipitation2 = str(weather['forecast']['forecastday'][0]['day']['totalprecip_mm'])
             extra_description2 = str(weather['forecast']['forecastday'][0]['day']['condition']['text'])
             
-            
             if self.temperature1 != temperature2:
                 self.temperature1 = temperature2
                 self.label_temperature.config(text=temperature2 + degree_sign)
@@ -128,7 +126,6 @@ class Weather(Frame):
             if self.extra_description1 != extra_description2:
                 self.extra_description2 = extra_description2
                 self.label_extra_description.config(text=extra_description2)
-
 
         else:
             self.label_no_weather_data.config(text=self.no_weather_data1)
@@ -165,7 +162,6 @@ class CSGO_STATS(Frame):
     def __init__(self, master):
         Frame.__init__(self, master, background="BLACK")
         
-        
         self.headshots1 = ""
         self.label_headshots = Label(self, font="dreams 20", bg="BLACK", fg="WHITE")
         self.label_headshots.pack(side=BOTTOM, anchor="w")
@@ -188,7 +184,6 @@ class CSGO_STATS(Frame):
         self.label_csgo_title.pack(side=BOTTOM, anchor="w")
         
         self.update_stats()
-    
     
     def update_stats(self):
         url_stats = "http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=730&key=" + steam_key + "&steamid=" + steam_id
@@ -218,24 +213,19 @@ class CSGO_STATS(Frame):
             self.label_no_stats.config(text=no_stats2)
         self.after(5000, self.update_stats)
         
-        
-        
 class Final:
     def __init__(self):
         self.root = Tk()
         self.root.configure(bg="BLACK")
         self.state = False
-
         
         self.top = Frame(self.root, bg="BLACK")
         self.top.pack(side=TOP, fill=BOTH)
         self.bottom = Frame(self.root, bg="BLACK")
         self.bottom.pack(side=BOTTOM, fill=BOTH)
         
-        
         self.time = Time_and_Day(self.top)
         self.time.pack(side=RIGHT, anchor=N, pady=60)
-        
         
         self.weather_show = Weather(self.top)
         self.weather_show.pack(side=LEFT, anchor=N, padx=50, pady=60)
@@ -243,11 +233,9 @@ class Final:
         self.greeting = Label(self.root, text="Hello Sreekara", font="Arial 65", bg="BLACK", fg="WHITE")
         self.greeting.pack(pady=375)
         
-        
         self.alert_show = Alert(self.root)
         self.alert_show.pack(padx=100)
         
-
         self.stats_show = CSGO_STATS(self.bottom)
         self.stats_show.pack(side=LEFT, anchor=S, padx=100, pady=60)
         
