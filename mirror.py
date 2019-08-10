@@ -237,7 +237,7 @@ class Final:
         self.alert_show.pack(padx=100)
         
         self.stats_show = CSGO_STATS(self.bottom)
-        self.stats_show.pack(side=LEFT, anchor=S, padx=100, pady=60)
+        self.stats_show.pack(side=LEFT, anchor=S, padx=50, pady=60)
         
         self.root.bind("<Return>", self.toggle_fullscreen)
         self.root.bind("<Escape>", self.end_fullscreen)
