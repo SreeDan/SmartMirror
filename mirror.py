@@ -97,7 +97,7 @@ class Weather(Frame):
         self.label_extra_description = Label(self, font = "dreams 10", bg="BLACK", fg="WHITE")
         self.label_extra_description.pack(side=TOP, anchor="w")
         
-        self.no_weather_data1 = "Error, I will try to fix this"
+        self.no_weather_data1 = "I can't get the weather at the moment. I will try to fix"
         self.label_no_weather_data = Label(self, font="dreams 10", bg="BLACK", fg="WHITE")
         self.label_no_weather_data.pack(side=TOP, anchor="w")
         
@@ -129,6 +129,10 @@ class Weather(Frame):
 
         else:
             self.label_no_weather_data.config(text=self.no_weather_data1)
+            self.label_temperature.config(text="")
+            self.label_description.config(text="")
+            self.label_precipitation.config(text="")
+            self.label_extra_description.config(text="")
         self.after(600000, self.update_weather)
         
 class Alert(Frame):
@@ -156,7 +160,7 @@ class Alert(Frame):
                 pass
 
         else:
-            pass
+            self.label_alert.config(text="")
         self.after(600000, self.update_alert)
 class CSGO_STATS(Frame):
     def __init__(self, master):
@@ -209,6 +213,9 @@ class CSGO_STATS(Frame):
                 self.headshots1 = headshots2
                 self.label_headshots.config(text="You have " + headshots2 + " heashots!")
         else:
+            self.label_headshots.config(text="")
+            self.label_wins.config(text="")
+            self.label_kill_death_ratio.config(text="")
             no_stats2 = "Unfortunately, I cannot get that information at the moment. I will tell you as quick as I can!"
             self.label_no_stats.config(text=no_stats2)
         self.after(5000, self.update_stats)
