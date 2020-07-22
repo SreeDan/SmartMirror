@@ -12,6 +12,6 @@ This is the front of the mirror.
 
 <img src="images/Front-of-Mirror.jpg" width="700">
 
-This is the back of the mirror. I taped the HDMI cable to keep it from protruding out.and used corner brackets to keep the monitor and acrylic sheet in place.
+This is the back of the mirror. I taped the HDMI cable to keep it from protruding out and used corner brackets to keep the monitor and acrylic sheet in place.
 
 <img src="images/Back-of-Mirror.jpg" width="700">
